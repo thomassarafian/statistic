@@ -95,6 +95,14 @@ void	parametric(t_parsing *parse, t_nparsing *n_parse)
    			{
 				if (parse->type_echantillon[0] == 'I')
 				{
+					if (groupe == 2)
+					{
+						parse->ind_std = ((parse->nb_effectif[0] - parse->nb_effectif[1])
+						/ parse->ecart_type[0])
+
+					}
+					else if (groupe == 1 && n_groupe == 1)
+
 					printf("FORMULE I\n");
 				}
 				else if (parse->type_echantillon[0] == 'A')
@@ -133,7 +141,7 @@ void	parametric(t_parsing *parse, t_nparsing *n_parse)
    					}
    					else
    					{
-   						printf("NON PARAMETRIQUE car :\n");
+   						printf("\n\x1B[36mNON PARAMETRIQUE\033[0m car :\n\n");
    						display_error(parse, n_parse);
    					}
    				}
@@ -154,7 +162,7 @@ void	parametric(t_parsing *parse, t_nparsing *n_parse)
    					}
    					else
    					{
-   						printf("NON PARAMETRIQUE car :\n");
+   						printf("\n\x1B[36mNON PARAMETRIQUE\033[0m car :\n\n");
    						n_display_error(parse, n_parse);
 
    					}

@@ -39,7 +39,8 @@ struct s_parsing
 	FORMULE MATHEMATIQUE
 	*/
 	double binomial;
-
+	double ind_std;
+	double app_std;
 
 };
 typedef struct s_parsing t_parsing;
