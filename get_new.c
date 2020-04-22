@@ -142,7 +142,9 @@ void	n_get_nb_effectif(t_nparsing *n_parse)
 	else if (n_parse->new_echtn_n == 1)
 	{
 		printf("Nombre d'effectif du \033[1;31mnouveau\033[0m groupe \033[1;31m%d\033[0m ?\n-> ", i);
+		green();
 		scanf("%d", &n_parse->n_nb_effectif[i-1]);
+		reset();
 	}
 }
 

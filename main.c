@@ -16,6 +16,20 @@ int main()
 	int j = 1;
 	i = 1;
 	system("clear");
+
+	char *s = malloc(100);
+	double test = 0.00000000432;
+
+	sprintf(s,"%.15lf", test);
+	printf("double : %s\n", s);
+
+	int count = count_zr(s);
+
+	printf("NB 0 : %d\n", count);
+	printf("|%12.5e|\n", 0.000000000303);
+	// printf("𝓏 = 𝑛₁𝘧₁𝓂𝑛𝑠\n");
+	// long double test = -123.456789123456789;
+	// printf("\n test : %10.14Lf\n", test);
 	yellow();
 	printf("\n\n\t\tCOUCOU JUSTINE :)\n\n");
 	reset();
@@ -58,13 +72,13 @@ int main()
 	reset();
 	if (parse.normalite == 1 && parse.homo == 1)
 	{
-		printf("\nTu es dans PARAMETRIQUE\n\n");
+		printf("\nTu es dans \033[1;33mPARAMETRIQUE\033[0m\n\n");
 		parametric(&parse, &n_parse);
 	}
 	else
 	{
 		non_parametric(&parse, &n_parse);
-		printf("\nTu es dans NON PARAMETRIQUE\n");
+		printf("\nTu es dans \033[1;33mNON PARAMETRIQUE\033[0m\n");
 	}
 
 

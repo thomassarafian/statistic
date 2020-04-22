@@ -1,5 +1,26 @@
 #include "justine.h"
 
+int 	count_zr(char *str)
+{
+	int i;
+	int j;
+
+	j = 0;
+	i = 0;
+	// printf("str ---> %s\n", str);
+	while (str[i] != '.')
+	{
+		i++;
+	}
+	i++;
+	while (str[i] && str[i] == '0')
+	{
+		j++;
+		i++;
+	}
+	return (j);
+}
+
 void	clean_memory(t_parsing *parse, int *tab)
 {
 	int i;

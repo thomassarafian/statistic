@@ -40,7 +40,9 @@ struct s_parsing
 	*/
 	double binomial;
 	double ind_std;
+	double tmp_ind_std;
 	double app_std;
+	double fisher;
 
 };
 typedef struct s_parsing t_parsing;

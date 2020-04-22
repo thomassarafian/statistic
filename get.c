@@ -19,6 +19,7 @@ void	clc_ecart_type(t_parsing *parse)
 		{
 			parse->ecart_type[i-1] = sqrt((double)parse->variance[i-1]);
 			printf("Ecart type groupe \033[1;31m%d\033[0m = \x1B[32m%lf\033[0m\n", i, parse->ecart_type[i-1]);
+
 			i++;
 		}
 	}
