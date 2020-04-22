@@ -3,13 +3,13 @@
 void	display_error(t_parsing *parse, t_nparsing *n_parse)
 {
 	// if (!(parse->nb_effectif[0] >= 30))
-		printf("\033[1;31mn1 >= 30 ?\033[0m Resultat : n1 = \x1B[32m%d\033[0m\n", parse->nb_effectif[0]);
+		printf("\033[1;31mn1 >= 30 ?\033[0m \t    Resultat : n1 = \x1B[32m%d\033[0m\n", parse->nb_effectif[0]);
 	// if (!(parse->nb_effectif[1] >= 30))
-		printf("\033[1;31mn2 >= 30 ?\033[0m Resultat : n2 = \x1B[32m%d\033[0m\n", parse->nb_effectif[1]);
+		printf("\033[1;31mn2 >= 30 ?\033[0m \t    Resultat : n2 = \x1B[32m%d\033[0m\n", parse->nb_effectif[1]);
 	// if (!((parse->nb_effectif[0] * parse->f) >= 5))
-		printf("\033[1;31mn1 x f >= 5 ?\033[0m Resultat : %d x %lf = \x1B[32m%lf\033[0m\n", parse->nb_effectif[0],parse->f,(parse->nb_effectif[0] * parse->f));
+		printf("\033[1;31mn1 x f >= 5 ?\033[0m \t    Resultat : %d x %lf = \x1B[32m%lf\033[0m\n", parse->nb_effectif[0],parse->f,(parse->nb_effectif[0] * parse->f));
 	// if (!((parse->nb_effectif[1] * parse->f) >= 5))
-		printf("\033[1;31mn2 x f >= 5 ?\033[0m Resultat : %d x %lf = \x1B[32m%lf\033[0m\n", parse->nb_effectif[1],parse->f,(parse->nb_effectif[1] * parse->f));
+		printf("\033[1;31mn2 x f >= 5 ?\033[0m \t    Resultat : %d x %lf = \x1B[32m%lf\033[0m\n", parse->nb_effectif[1],parse->f,(parse->nb_effectif[1] * parse->f));
 	// if (!((parse->nb_effectif[0] * (1 - parse->f)) >= 5))
 		printf("\033[1;31mn1 x (1 - f) >= 5 ?\033[0m Resultat : %d x (1 - %lf) = \x1B[32m%lf\033[0m\n", parse->nb_effectif[0],parse->f,(parse->nb_effectif[0] * (1 - parse->f)));
 	// if (!((parse->nb_effectif[1] * (1 - parse->f)) >= 5))
@@ -19,13 +19,13 @@ void	display_error(t_parsing *parse, t_nparsing *n_parse)
 void	n_display_error(t_parsing *parse, t_nparsing *n_parse)
 {
 	// if (!(parse->nb_effectif[0] >= 30))
-		printf("\033[1;31mn1 >= 30 ?\033[0m Resultat : n1 = \x1B[32m%d\033[0m\n", parse->nb_effectif[0]);
+		printf("\033[1;31mn1 >= 30 ?\033[0m \t    Resultat : n1 = \x1B[32m%d\033[0m\n", parse->nb_effectif[0]);
 	// if (!(n_parse->n_nb_effectif[0] >= 30))
-		printf("\033[1;31mn2 >= 30 ?\033[0m Resultat : n2 = \x1B[32m%d\033[0m\n", n_parse->n_nb_effectif[0]);
+		printf("\033[1;31mn2 >= 30 ?\033[0m \t    Resultat : n2 = \x1B[32m%d\033[0m\n", n_parse->n_nb_effectif[0]);
 	// if (!((parse->nb_effectif[0] * parse->f) >= 5))
-		printf("\033[1;31mn1 x f >= 5 ?\033[0m Resultat : %d x %lf = \x1B[32m%lf\033[0m\n", parse->nb_effectif[0],parse->f,(parse->nb_effectif[0] * parse->f));
+		printf("\033[1;31mn1 x f >= 5 ?\033[0m \t    Resultat : %d x %lf = \x1B[32m%lf\033[0m\n", parse->nb_effectif[0],parse->f,(parse->nb_effectif[0] * parse->f));
 	// if (!((n_parse->n_nb_effectif[0] * parse->f) >= 5))
-		printf("\033[1;31mn2 x f >= 5 ?\033[0m Resultat : %d x %lf = \x1B[32m%lf\033[0m\n", n_parse->n_nb_effectif[0],parse->f,(n_parse->n_nb_effectif[0] * parse->f));
+		printf("\033[1;31mn2 x f >= 5 ?\033[0m \t    Resultat : %d x %lf = \x1B[32m%lf\033[0m\n", n_parse->n_nb_effectif[0],parse->f,(n_parse->n_nb_effectif[0] * parse->f));
 	// if (!((parse->nb_effectif[0] * (1 - parse->f)) >= 5))
 		printf("\033[1;31mn1 x (1 - f) >= 5 ?\033[0m Resultat : %d x (1 - %lf) = \x1B[32m%lf\033[0m\n", parse->nb_effectif[0],parse->f,(parse->nb_effectif[0] * (1 - parse->f)));
 	// if (!((n_parse->n_nb_effectif[0] * (1 - parse->f)) >= 5))
@@ -120,7 +120,7 @@ void	parametric(t_parsing *parse, t_nparsing *n_parse)
 						// parse->ind_std =
 
 					}
-					printf("Formule Student Independante : 𝓏 = \x1B[32m%lf\033[0m\n", parse->ind_std);
+					printf("Formule Student Independante : 𝓏 = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n", parse->ind_std, parse->ind_std);
 				}
 				else if (parse->type_echantillon[0] == 'A')
 				{
@@ -134,7 +134,7 @@ void	parametric(t_parsing *parse, t_nparsing *n_parse)
 						// printf("𝓏 = 𝑛₁𝘧₁𝓂𝑛𝑠\n");
 						parse->app_std = ((parse->moy[0]) / (parse->ecart_type[0] / sqrt((double)parse->nb_effectif[0])));
 					}
-					printf("Formule Student Apparié : 𝓏 = \x1B[32m%lf\033[0m\n", parse->app_std);
+					printf("Formule Student Apparié : 𝓏 = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n", parse->app_std, parse->app_std);
 				}
    			}
    			if (i >= 2 && parse->compar[0] == 'M')
@@ -143,11 +143,11 @@ void	parametric(t_parsing *parse, t_nparsing *n_parse)
    			}
    			if (i >= 2 && parse->compar[0] == 'P')
    			{
-   				printf("Quel est la valeur de 𝘧₁ ?\n-> ");
+   				printf("Quel est la valeur de \033[1;31m𝘧₁\033[0m ?\n-> ");
    				green();
    				scanf("%lf", &parse->f1);
    				reset();
-   				printf("Quel est la valeur de 𝘧₂ ?\n-> ");
+   				printf("Quel est la valeur de \033[1;31m𝘧₂\033[0m ?\n-> ");
    				green();
    				scanf("%lf", &parse->f2);
    				reset();
@@ -155,7 +155,7 @@ void	parametric(t_parsing *parse, t_nparsing *n_parse)
    				{
    					parse->f = (((double)parse->nb_effectif[0] * parse->f1) + ((double)parse->nb_effectif[1] * parse->f2))
    						/ ((double)parse->nb_effectif[0] + (double)parse->nb_effectif[1]);
-   					printf("Resultat de \033[1;31m𝘧 commun\033[0m = \x1B[32m%lf\033[0m\n", parse->f);
+   					printf("\nResultat de \033[1;31m𝘧 commun\033[0m = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n\n", parse->f, parse->f);
    					if (((parse->nb_effectif[0] * parse->f) >= 5)
    						&& ((parse->nb_effectif[1] * parse->f) >= 5)
    						&& ((parse->nb_effectif[0] * (1 - parse->f)) >= 5)
@@ -164,7 +164,7 @@ void	parametric(t_parsing *parse, t_nparsing *n_parse)
    						display_error(parse, n_parse);
    						parse->binomial = ((parse->f1 - parse->f2)
    						/ sqrt(parse->f * ((double)1-parse->f) * (((double)1/(double)parse->nb_effectif[0]) + (double)1/(double)parse->nb_effectif[1])));
-   						printf("Resultat Formule Binomial : 𝓏 = \x1B[32m%lf\033[0m\n", parse->binomial);
+   						printf("\nResultat Formule Binomial : 𝓏 = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n", parse->binomial, parse->binomial);
    					}
    					else
    					{
@@ -176,7 +176,7 @@ void	parametric(t_parsing *parse, t_nparsing *n_parse)
    				{
    					parse->f = (((double)parse->nb_effectif[0] * parse->f1) + ((double)n_parse->n_nb_effectif[0] * parse->f2))
    						/ ((double)parse->nb_effectif[0] + (double)n_parse->n_nb_effectif[0]);
-   					printf("Resultat de \033[1;31m𝘧 commun\033[0m = \x1B[32m%lf\033[0m\n", parse->f);
+   					printf("\nResultat de \033[1;31m𝘧 commun\033[0m = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n", parse->f, parse->f);
 					if (((parse->nb_effectif[0] * parse->f) >= 5)
 					&& ((n_parse->n_nb_effectif[0] * parse->f) >= 5)
 					&& ((parse->nb_effectif[0] * (1 - parse->f)) >= 5)
@@ -185,7 +185,7 @@ void	parametric(t_parsing *parse, t_nparsing *n_parse)
    						n_display_error(parse, n_parse);
 						parse->binomial = ((parse->f1 - parse->f2)
 						/ sqrt(parse->f * ((double)1-parse->f) * (((double)1/(double)parse->nb_effectif[0]) + (double)1/(double)n_parse->n_nb_effectif[0])));
-   						printf("Resultat Formule Binomial : 𝓏 = \x1B[32m%lf\033[0m\n", parse->binomial);
+   						printf("\nResultat Formule Binomial : 𝓏 = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n", parse->binomial, parse->binomial);
    					}
    					else
    					{
@@ -224,7 +224,7 @@ void	parametric(t_parsing *parse, t_nparsing *n_parse)
    				else
    					parse->fisher = parse->variance[1] / parse->variance[0];
    			}
-   			printf("Resultat Formule Fisher : 𝓏 = \x1B[32m%lf\033[0m\n", parse->fisher);
+   			printf("\nResultat Formule Fisher : 𝓏 = \x1B[32m%lf\033[0m\n", parse->fisher);
    		}
 	}
 	else if (parse->nb_groupe > 2)

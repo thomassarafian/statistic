@@ -18,15 +18,18 @@ int main()
 	system("clear");
 
 	char *s = malloc(100);
-	double test = 0.00000000432;
 
-	sprintf(s,"%.15lf", test);
-	printf("double : %s\n", s);
+	double test = 0.000000000000432;
 
-	int count = count_zr(s);
+	// int ooo = 12;
+	// sprintf(s,"%.*lf", ooo, test);
 
-	printf("NB 0 : %d\n", count);
-	printf("|%12.5e|\n", 0.000000000303);
+	// printf("double : %s\n", s);
+
+	// int count = count_zr(s) - 1;
+
+	// printf("NB 0 : %d\n", count);
+	printf("|%e|\n", test);
 	// printf("𝓏 = 𝑛₁𝘧₁𝓂𝑛𝑠\n");
 	// long double test = -123.456789123456789;
 	// printf("\n test : %10.14Lf\n", test);

@@ -18,7 +18,7 @@ void	clc_ecart_type(t_parsing *parse)
 		while (i <= parse->nb_groupe)
 		{
 			parse->ecart_type[i-1] = sqrt((double)parse->variance[i-1]);
-			printf("Ecart type groupe \033[1;31m%d\033[0m = \x1B[32m%lf\033[0m\n", i, parse->ecart_type[i-1]);
+			printf("Ecart type groupe \t\033[1;31m%d\033[0m = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n\n", i, parse->ecart_type[i-1], parse->ecart_type[i-1]);
 
 			i++;
 		}
@@ -26,7 +26,7 @@ void	clc_ecart_type(t_parsing *parse)
 	else if (parse->nb_groupe == 1)
 	{
 		parse->ecart_type[i-1] = sqrt((double)parse->variance[i-1]);
-		printf("L'écart-type du groupe \033[1;31m%d\033[0m = \x1B[32m%lf\033[0m\n", i, parse->ecart_type[i-1]);
+		printf("L'écart-type du groupe \t\033[1;31m%d\033[0m = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n\n", i, parse->ecart_type[i-1], parse->ecart_type[i-1]);
 	}
 }
 
@@ -56,7 +56,7 @@ void	clc_variance(t_parsing *parse)
 				j++;
 			}
 			parse->variance[i-1] = parse->variance[i-1] * parse->pow_variance_val[i-1];
-			printf("La variance du groupe \033[1;31m%d\033[0m = \x1B[32m%lf\033[0m\n", i, parse->variance[i-1]);
+			printf("La variance du groupe \t\033[1;31m%d\033[0m = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n", i, parse->variance[i-1], parse->variance[i-1]);
 			i++;
 		}
 	}
@@ -69,7 +69,7 @@ void	clc_variance(t_parsing *parse)
 			j++;
 		}
 		parse->variance[i-1] *= parse->pow_variance_val[i-1];
-		printf("La variance du groupe \033[1;31m%d\033[0m = \x1B[32m%lf\033[0m\n", i, parse->variance[i-1]);
+		printf("La variance du groupe \t\033[1;31m%d\033[0m = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n", i, parse->variance[i-1], parse->variance[i-1]);
 	}
 }
 
@@ -94,7 +94,7 @@ void	clc_moy(t_parsing *parse)
 				j++;
 			}
 			parse->moy[i-1] = parse->moy[i-1] / (double)parse->nb_effectif[i-1];
-			printf("La moyenne du groupe \033[1;31m%d\033[0m = \x1B[32m%lf\033[0m\n", i, parse->moy[i-1]);
+			printf("\nLa moyenne du groupe \t\033[1;31m%d\033[0m = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n", i, parse->moy[i-1], parse->moy[i-1]);
 			i++;
 		}
 	}
@@ -107,7 +107,7 @@ void	clc_moy(t_parsing *parse)
 			j++;
 		}
 		parse->moy[i-1] /= (double)parse->nb_effectif[i-1];
-		printf("La moyenne du groupe \033[1;31m%d\033[0m = \x1B[32m%lf\033[0m\n", i, parse->moy[i-1]);
+		printf("\nLa moyenne du groupe \t\033[1;31m%d\033[0m = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n", i, parse->moy[i-1], parse->moy[i-1]);
 	}
 
 }

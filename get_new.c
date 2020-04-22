@@ -18,14 +18,14 @@ void	n_clc_ecart_type(t_nparsing *n_parse)
 		while (i <= n_parse->new_echtn_n)
 		{
 			n_parse->n_ecart_type[i-1] = sqrt((double)n_parse->n_variance[i-1]);
-			printf("Ecart type du \033[1;31mnouveau\033[0m groupe \033[1;31m%d\033[0m : = \x1B[32m%lf\033[0m\n", i, n_parse->n_ecart_type[i-1]);
+			printf("Ecart type du \033[1;31mnouveau\033[0m groupe \t\033[1;31m%d\033[0m = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n\n", i, n_parse->n_ecart_type[i-1],  n_parse->n_ecart_type[i-1]);
 			i++;
 		}
 	}
 	else if (n_parse->new_echtn_n == 1)
 	{
 		n_parse->n_ecart_type[i-1] = sqrt((double)n_parse->n_variance[i-1]);
-		printf("Ecart type du \033[1;31mnouveau\033[0m groupe \033[1;31m%d\033[0m : = \x1B[32m%lf\033[0m\n", i, n_parse->n_ecart_type[i-1]);
+		printf("Ecart type du \033[1;31mnouveau\033[0m groupe \t\033[1;31m%d\033[0m = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n\n", i, n_parse->n_ecart_type[i-1], n_parse->n_ecart_type[i-1]);
 	}
 }
 
@@ -56,7 +56,7 @@ void	n_clc_variance(t_nparsing *n_parse)
 				j++;
 			}
 			n_parse->n_variance[i-1] = n_parse->n_variance[i-1] * n_parse->n_pow_variance_val[i-1];
-			printf("Variance du \033[1;31mnouveau\033[0m groupe \033[1;31m%d\033[0m = \x1B[32m%lf\033[0m\n", i, n_parse->n_variance[i-1]);
+			printf("Variance du \033[1;31mnouveau\033[0m groupe \t\033[1;31m%d\033[0m = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n", i, n_parse->n_variance[i-1], n_parse->n_variance[i-1]);
 			i++;
 		}
 	}
@@ -69,7 +69,7 @@ void	n_clc_variance(t_nparsing *n_parse)
 			j++;
 		}
 		n_parse->n_variance[i-1] *= n_parse->n_pow_variance_val[i-1];
-		printf("Variance du \033[1;31mnouveau\033[0m groupe \033[1;31m%d\033[0m = \x1B[32m%lf\033[0m\n", i, n_parse->n_variance[i-1]);
+		printf("Variance du \033[1;31mnouveau\033[0m groupe \t\033[1;31m%d\033[0m = \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n", i, n_parse->n_variance[i-1], n_parse->n_variance[i-1]);
 	}
 }
 
@@ -99,7 +99,7 @@ void	n_clc_moy(t_nparsing *n_parse)
 			}
 			n_parse->n_moy[i-1] = n_parse->n_moy[i-1] / (double)n_parse->n_nb_effectif[i-1];
 			// printf("n_parse->n_nb_effectif[i-1] : %d\n", n_parse->n_nb_effectif[i-1]);
-			printf("La moyenne du \033[1;31mnouveau\033[0m groupe \033[1;31m%d\033[0m est : \x1B[32m%lf\033[0m\n", i, n_parse->n_moy[i-1]);
+			printf("\nLa moyenne du \033[1;31mnouveau\033[0m groupe \t\033[1;31m%d\033[0m est : \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n", i, n_parse->n_moy[i-1], n_parse->n_moy[i-1]);
 			i++;
 		}
 	}
@@ -112,7 +112,7 @@ void	n_clc_moy(t_nparsing *n_parse)
 			j++;
 		}
 		n_parse->n_moy[i-1] = n_parse->n_moy[i-1] / (double)n_parse->n_nb_effectif[i-1];
-		printf("La moyenne du \033[1;31mnouveau\033[0m groupe \033[1;31m%d\033[0m est : \x1B[32m%lf\033[0m\n", i, n_parse->n_moy[i-1]);
+		printf("\nLa moyenne du \033[1;31mnouveau\033[0m groupe \t\033[1;31m%d\033[0m est : \x1B[32m%lf\033[0m <=> \x1B[32m%.2e\033[0m\n", i, n_parse->n_moy[i-1], n_parse->n_moy[i-1]);
 	}
 }
 

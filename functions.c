@@ -5,7 +5,7 @@ int 	count_zr(char *str)
 	int i;
 	int j;
 
-	j = 0;
+	j = 1;
 	i = 0;
 	// printf("str ---> %s\n", str);
 	while (str[i] != '.')
@@ -13,7 +13,12 @@ int 	count_zr(char *str)
 		i++;
 	}
 	i++;
-	while (str[i] && str[i] == '0')
+	while (str[i] == '0')
+	{
+		j++;
+		i++;
+	}
+	while (str[i] != '0')
 	{
 		j++;
 		i++;
